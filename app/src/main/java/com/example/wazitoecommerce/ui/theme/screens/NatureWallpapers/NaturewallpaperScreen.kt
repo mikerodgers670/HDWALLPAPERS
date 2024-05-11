@@ -25,7 +25,7 @@ import com.example.wazitoecommerce.R
 
 
 @Composable
-fun     NatureWallPaperScreen(navController: NavHostController) {
+fun   NatureWallPaperScreen(navController: NavHostController) {
 
     Column(modifier = Modifier.fillMaxSize()) {
         Text(
@@ -88,9 +88,9 @@ fun     NatureWallPaperScreen(navController: NavHostController) {
         }
         Spacer(modifier = Modifier.height(20.dp))
         Row {
-            Image(painter = painterResource(id = R.drawable.animal20), contentDescription = "Download")
+            Image(painter = painterResource(id = R.drawable.bmw25), contentDescription = "Download")
             Spacer(modifier = Modifier.width(35.dp))
-            Image(painter = painterResource(id = R.drawable.animal20), contentDescription = "Download")
+            Image(painter = painterResource(id = R.drawable.greentree), contentDescription = "Download")
         }
         Spacer(modifier = Modifier.height(20.dp))
         Row {
@@ -99,23 +99,7 @@ fun     NatureWallPaperScreen(navController: NavHostController) {
             Image(painter = painterResource(id = R.drawable.animal20), contentDescription = "Download")
         }
         Spacer(modifier = Modifier.height(20.dp))
-        Row {
-            Image(painter = painterResource(id = R.drawable.animal20), contentDescription = "Download")
-            Spacer(modifier = Modifier.width(35.dp))
-            Image(painter = painterResource(id = R.drawable.animal20), contentDescription = "Download")
-        }
-        Spacer(modifier = Modifier.height(20.dp))
-        Row {
-            Image(painter = painterResource(id = R.drawable.animal20), contentDescription = "Download")
-            Spacer(modifier = Modifier.width(35.dp))
-            Image(painter = painterResource(id = R.drawable.animal20), contentDescription = "Download")
-        }
-        Spacer(modifier = Modifier.height(20.dp))
-        Row {
-            Image(painter = painterResource(id = R.drawable.animal20), contentDescription = "Download")
-            Spacer(modifier = Modifier.width(35.dp))
-            Image(painter = painterResource(id = R.drawable.animal20), contentDescription = "Download")
-        }
+
 
 
 

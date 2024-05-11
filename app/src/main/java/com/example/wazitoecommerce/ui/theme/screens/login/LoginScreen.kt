@@ -1,14 +1,19 @@
 package com.example.wazitoecommerce.ui.theme.screens.login
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
@@ -41,32 +46,36 @@ import com.example.wazitoecommerce.data.AuthViewModel
 import com.example.wazitoecommerce.navigation.HOME_URL
 import com.example.wazitoecommerce.navigation.SIGNUP_URL
 import com.example.wazitoecommerce.ui.theme.WazitoECommerceTheme
+import com.example.wazitoecommerce.ui.theme.lBLUE
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun LoginScreen(navController:NavHostController){
     Column(
         modifier = Modifier
-            .paint(painterResource(id = R.drawable.desk20), contentScale = ContentScale.FillBounds)
+            .paint(painterResource(id = R.drawable.img), contentScale = ContentScale.FillBounds)
             .fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center
     ) {
         Text(
-            text = "WELCOME TO HD WALLPAPERS",
+            text = " HD WALLPAPERS",
             fontSize = 40.sp,
             fontWeight = FontWeight.Bold,
-            fontFamily = FontFamily.Cursive
+            color = Color.Black
         )
+
         Spacer(modifier = Modifier.height(30.dp))
 
+
         Text(
-            text = "Login Details",
-            fontSize = 40.sp,
+            text = "Welcome Back",
+            fontSize = 20.sp,
             fontWeight = FontWeight.Bold,
             fontFamily = FontFamily.SansSerif,
-            Color = Color.Blue
+            color = Color.Black
+
         )
-        Spacer(modifier = Modifier.height(30.dp))
+        Spacer(modifier = Modifier.height(10.dp))
 
         var email by remember { mutableStateOf("") }
         var password by remember { mutableStateOf("") }
@@ -74,22 +83,31 @@ fun LoginScreen(navController:NavHostController){
         OutlinedTextField(
             value = email,
             onValueChange = {email = it},
-            label = { Text(text = "Enter email")},
+            label = { Text(text = "Email")},
             keyboardOptions = KeyboardOptions(
                 keyboardType = KeyboardType.Email
+            ),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(start = 10.dp, end = 10.dp),
+            leadingIcon = { Icon(imageVector = Icons.Default.Email, contentDescription = "")},
+
+
             )
-        )
 
         Spacer(modifier = Modifier.height(30.dp))
         OutlinedTextField(
             value = password,
             onValueChange = {password = it},
-            label = { Text(text = "Enter password")},
+            label = { Text(text = "Password")},
             leadingIcon = { Icon(imageVector = Icons.Default.Lock, contentDescription = "")},
             keyboardOptions = KeyboardOptions(
                 keyboardType = KeyboardType.Password
             ),
-            visualTransformation = PasswordVisualTransformation()
+            visualTransformation = PasswordVisualTransformation(),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(start = 10.dp, end = 10.dp)
         )
 
         Spacer(modifier = Modifier.height(30.dp))
@@ -98,36 +116,42 @@ fun LoginScreen(navController:NavHostController){
 
         Button(onClick = {
             authViewModel.login(email, password)
-            navController.navigate(HOME_URL)
-        }) {
-            Text(text = "Login now",
-                modifier = Modifier.fillMaxWidth(),
-                textAlign = TextAlign.Center,
-                fontSize = 50.sp,
-                color = Color.Blue,
-                fontWeight = FontWeight.ExtraBold,
-                fontFamily = FontFamily.Cursive)
+            navController.navigate(SIGNUP_URL)
+        }, modifier = Modifier
+            .fillMaxWidth()
+            .padding(start = 10.dp, end = 10.dp),
+            colors = ButtonDefaults.buttonColors(lBLUE),
+            shape = RoundedCornerShape(5.dp)
+        ) {
+            Text(text = "Login now")
             }
 
+        Spacer(modifier = Modifier.height(10.dp))
 
 
 
-
+        Button(onClick = {
+            navController.navigate(SIGNUP_URL)
+        }, modifier = Modifier
+            .fillMaxWidth()
+            .padding(start = 10.dp, end = 10.dp),
+            colors = ButtonDefaults.buttonColors(lBLUE),
+            shape = RoundedCornerShape(5.dp)
+        ) {
+            Text(text = "CREATE AN ACCOUNT")
         }
         Spacer(modifier = Modifier.height(30.dp))
 
 
-        Button(onClick = {
-            navController.navigate(SIGNUP_URL)
-        }) {
-            Text(text = "Register instead")
-        }
 
-        Button(onClick = {
-            navController.navigate(SIGNUP_URL)
-        }) {
-            Text(text = "")
-        }
+
+
+
+
+
+    }
+
+
     }
 
 

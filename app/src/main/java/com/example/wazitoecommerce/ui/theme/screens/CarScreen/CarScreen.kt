@@ -21,7 +21,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.wazitoecommerce.R
 
 @Composable
-fun GoPremiumScreen(navController: NavHostController) {
+fun CarScreen(navController: NavHostController) {
 
     Column(modifier = Modifier.fillMaxSize()) {
         Text(
@@ -119,6 +119,6 @@ fun GoPremiumScreen(navController: NavHostController) {
 }
 @Preview
 @Composable
-fun GoPremiumScreenPreview(){
-    GoPremiumScreen(rememberNavController())
+fun CarScreenPreview(){
+    CarScreen(rememberNavController())
 }

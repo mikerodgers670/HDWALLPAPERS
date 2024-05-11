@@ -42,23 +42,23 @@ fun AnimalWallPaperScreen(navController: NavHostController) {
         Row {
             Image(painter = painterResource(id = R.drawable.animal20), contentDescription = "Download")
             Spacer(modifier = Modifier.width(35.dp))
-            Image(painter = painterResource(id = R.drawable.animal20), contentDescription = "Download")
+            Image(painter = painterResource(id = R.drawable.animal1), contentDescription = "Download")
         }
         Spacer(modifier = Modifier.height(20.dp))
         Row {
-            Image(painter = painterResource(id = R.drawable.car21), contentDescription = "Download")
+            Image(painter = painterResource(id = R.drawable.animal2), contentDescription = "Download")
             Spacer(modifier = Modifier.width(35.dp))
-            Image(painter = painterResource(id = R.drawable.animal20), contentDescription = "Download")
+            Image(painter = painterResource(id = R.drawable.animal10), contentDescription = "Download")
         }
         Spacer(modifier = Modifier.height(20.dp))
         Row {
-            Image(painter = painterResource(id = R.drawable.animal20), contentDescription = "Download")
+            Image(painter = painterResource(id = R.drawable.animal5), contentDescription = "Download")
             Spacer(modifier = Modifier.width(35.dp))
-            Image(painter = painterResource(id = R.drawable.animal20), contentDescription = "Download")
+            Image(painter = painterResource(id = R.drawable.animal9), contentDescription = "Download")
         }
         Spacer(modifier = Modifier.height(20.dp))
         Row {
-            Image(painter = painterResource(id = R.drawable.animal20), contentDescription = "Download")
+            Image(painter = painterResource(id = R.drawable.animal8), contentDescription = "Download")
             Spacer(modifier = Modifier.width(35.dp))
             Image(painter = painterResource(id = R.drawable.animal20), contentDescription = "Download")
         }

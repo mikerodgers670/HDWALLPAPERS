@@ -6,7 +6,9 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.wazitoecommerce.ui.theme.screens.CarScreen.CarScreen
 import com.example.wazitoecommerce.ui.theme.screens.Gopremium.GoPremiumScreen
+import com.example.wazitoecommerce.ui.theme.screens.NatureWallpapers.NatureWallPaperScreen
 import com.example.wazitoecommerce.ui.theme.screens.animalwallpaper.AnimalWallPaperScreen
 import com.example.wazitoecommerce.ui.theme.screens.home.HomeScreen
 import com.example.wazitoecommerce.ui.theme.screens.livewallpappers.LiveWallPaperScreen
@@ -15,12 +17,13 @@ import com.example.wazitoecommerce.ui.theme.screens.login.LoginScreen
 import com.example.wazitoecommerce.ui.theme.screens.products.AddProductsScreen
 import com.example.wazitoecommerce.ui.theme.screens.products.ViewProductsScreen
 import com.example.wazitoecommerce.ui.theme.screens.signup.SignupScreen
+import com.example.wazitoecommerce.ui.theme.screens.splash.SplashScreen1
 
 @Composable
 fun AppNavHost(
     modifier: Modifier = Modifier,
     navController:NavHostController = rememberNavController(),
-    startDestination:String = LOGIN_URL
+    startDestination:String = SPLASH_SCREEN_URL
 ){
     NavHost(
         navController = navController,
@@ -51,8 +54,14 @@ fun AppNavHost(
         composable(ANIMAL_WALLPAPER_URL){
             AnimalWallPaperScreen(navController = navController)
         }
+        composable(NATURE_WALLPAPERS_URL){
+            NatureWallPaperScreen(navController = navController)
+        }
         composable(CAR_SCREEN_URL){
-            CarWallpaperScreen(navController = navController)
+            CarScreen(navController = navController)
+        }
+        composable(SPLASH_SCREEN_URL){
+            SplashScreen1(navController =  navController)
         }
 
 
@@ -64,16 +73,5 @@ fun AppNavHost(
     }
 }
 
-@Composable
-fun CoolWallpaperScreen(navController: NavHostController) {
 
-}
 
-@Composable
-fun CarWallpaperScreen(navController: NavHostController) {
-
-}
-
-fun livewallpappersScreen(navController: NavHostController) {
-    TODO("Not yet implemented")
-}

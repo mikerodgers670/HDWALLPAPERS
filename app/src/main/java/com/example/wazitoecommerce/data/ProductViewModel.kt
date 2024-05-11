@@ -28,7 +28,7 @@ class ProductViewModel(var navController:NavHostController, var context: Context
         progress.setMessage("Please wait...")
     }
 
-    fun uploadProduct(name:String, quantity:String, price:String, filePath:Uri){
+    fun uploadProduct(name:String, filePath:Uri){
         val productId = System.currentTimeMillis().toString()
         val storageRef = FirebaseStorage.getInstance().getReference()
                                 .child("Products/$productId")
@@ -39,7 +39,7 @@ class ProductViewModel(var navController:NavHostController, var context: Context
                 // Save data to db
                 storageRef.downloadUrl.addOnSuccessListener {
                     var imageUrl = it.toString()
-                    var product = Product(name,quantity,price,imageUrl,productId)
+                    var product = Product(name,imageUrl,productId)
                     var databaseRef = FirebaseDatabase.getInstance().getReference()
                         .child("Products/$productId")
                     databaseRef.setValue(product).addOnCompleteListener {
